@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "api",
     "rest_framework_simplejwt",
+    "mood_logging",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "soulspace.urls"
@@ -82,6 +85,10 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:5500",  # Your frontend URL
+]
 
 
 # Password validation
