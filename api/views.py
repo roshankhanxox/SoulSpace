@@ -17,3 +17,9 @@ class RegisterView(generics.CreateAPIView):
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+# New view to list all users
+class UserListView(generics.ListAPIView):
+    queryset = User.objects.all().order_by("username")
+    serializer_class = UserSerializer
