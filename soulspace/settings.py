@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "mood_logging",
     "corsheaders",
     "chatbot",
+    "profiles",
 ]
 
 MIDDLEWARE = [

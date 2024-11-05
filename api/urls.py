@@ -10,4 +10,5 @@ urlpatterns = [
     path("mood/", include("mood_logging.urls")),
     path("users/", UserListView.as_view(), name="user_list"),
     path("chatbot/", include("chatbot.urls")),
+    path("profile/", include("profiles.urls")),
 ]
